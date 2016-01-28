@@ -1,9 +1,8 @@
 const path = require('path');
 const merge = require('webpack-merge');
-const webpack = require('wepack');
+const webpack = require('webpack');
 
-const target = process.env.npm_lifecycle_event;
-
+const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build')
@@ -22,7 +21,7 @@ const common = {
 // Default configutation
 if(TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
-    devServer {
+    devServer: {
       contentBase: PATHS.build,
 
       // Enable history API fallback so HTML5 History API based
