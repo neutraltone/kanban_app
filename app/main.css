@@ -1,3 +1,9 @@
 body {
-  background: cornsilk;
+  padding: 2em;
+  background: skyblue;
+  color: #333;
+}
+
+h1 {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
 }

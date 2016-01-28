@@ -20,7 +20,7 @@ const common = {
       {
         // Test expects a RegExp! Note the Slashes!
         test: /\.css$/,
-        loaders: ['style', css],
+        loaders: ['style', 'css'],
         // Include accepts either a path or an array of paths.
         include: PATHS.app
       }
@@ -32,6 +32,7 @@ const common = {
 // Default configutation
 if(TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
+    devtool: 'eval-source-map',
     devServer: {
       contentBase: PATHS.build,
 
