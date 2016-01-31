@@ -29,7 +29,7 @@ export default class App extends React.Component {
     return (
       <div>
         <button onClick={this.addNote}>+</button>
-        <notes notes={notes} onEdit={this.editNote} />
+        <Notes notes={notes} onEdit={this.editNote} />
       </div>
     );
   }
@@ -68,6 +68,6 @@ export default class App extends React.Component {
       return note;
     });
 
-    this.setState({notes});
-  }
+    this.setState({notes})
+  };
 }
