@@ -29,7 +29,7 @@ export default class App extends React.Component {
     return (
       <div>
         <button onClick={this.addNote}>+</button>
-        <Notes notes={notes} />
+        <notes notes={notes} onEdit={this.editNote} />
       </div>
     );
   }
@@ -58,4 +58,16 @@ export default class App extends React.Component {
       }])
     }, () => console.log('set state!')); // Example of passing a second parameter to `setState`.
   };
+
+  editNote = (id, task) => {
+    const notes = this.state.notes.map(note => {
+      if(note.id === id && task) {
+        note.task = task;
+      }
+
+      return note;
+    });
+
+    this.setState({notes});
+  }
 }
