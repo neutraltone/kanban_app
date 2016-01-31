@@ -57,6 +57,6 @@ export default class App extends React.Component {
         id: uuid.v4(),
         task: 'New Task'
       }])
-    })
-  }
+    }, () => console.log('set state!')); // Example of passing a second parameter to `setState`.
+  };
 }
